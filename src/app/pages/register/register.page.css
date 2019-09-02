@@ -1,0 +1,18 @@
+.mat-toolbar {
+    display: none;
+}
+.register {
+    height: 60%;
+    padding: 82px 40px;
+}
+mat-form-field {
+    width: 60%;
+}
+.changeFormButton {
+    margin-top: 44px;
+}
+.submitButton {
+    clear: both;
+    float: right;
+    margin-top: 26px;
+}

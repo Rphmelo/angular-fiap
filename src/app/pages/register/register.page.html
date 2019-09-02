@@ -1,0 +1,29 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="register">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <mat-card>
+            <mat-form-field>
+                <input matInput type="email" name="email" formControlName="email" placeholder="Email" maxlength="50"/>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput type="password" name="password" formControlName="password" placeholder="Senha" maxlength="20"/>
+            </mat-form-field>
+            <br>
+            <mat-form-field *ngIf="!toggleButton">
+                <input matInput type="password" name="confirmPassword" formControlName="confirmPassword" placeholder="Confirme sua senha" maxlength="20"/>
+                <mat-error *ngIf="(registerForm.controls.confirmPassword.invalid && registerForm.controls.confirmPassword.touched) && (registerForm.controls.password.value != registerForm.controls.confirmPassword.value)">
+                    Digite a mesma senha nos dois campos
+                </mat-error>
+            </mat-form-field>
+        </mat-card>
+        <button mat-button type="button" (click)="toggleTypeForm()" class="changeFormButton">
+            <span *ngIf="toggleButton">Quero me cadastrar</span>
+            <span *ngIf="!toggleButton">Já sou cadastrado</span>
+        </button>
+        <button mat-raised-button type="submit" color="accent" class="submitButton" [disabled]="!registerForm.valid && !toggleButton">
+            <span *ngIf="!toggleButton">Cadastrar</span>
+            <span *ngIf="toggleButton">Logar</span>
+        </button>
+    </form>
+</div>
