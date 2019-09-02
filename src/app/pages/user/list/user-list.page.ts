@@ -43,14 +43,14 @@ export class UserListPage {
         this.loading = false
 
         this._snackBar.open("Usuário deletado com sucesso", "Ok", {
-          duration: 2000,
+          duration: 2500,
         });
       })
       .catch(() => {
         this.loading = false
 
         this._snackBar.open("Ocorreu um erro ao deletar usuário", "Ok", {
-          duration: 2000,
+          duration: 2500,
         });
       });
     });

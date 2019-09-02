@@ -64,27 +64,27 @@ export class UserPage {
       .then(() => {
         this.loading = false;
 
-        this._snackBar.open("Usuário atualizado", "Ok", { duration: 2000 });
+        this._snackBar.open("Usuário atualizado com sucesso", "Ok", { duration: 2000 });
 
         this._location.back();
       }).catch((err) => {
         this.loading = false
 
-        this._snackBar.open("Falha ao atualizar usuário", "Ok", { duration: 2000 });
+        this._snackBar.open("Ocorreu um erro ao atualizar o usuário", "Ok", { duration: 2000 });
       });
     } else {
       this.usersService.create(this.userForm.value)
       .then(() => {
         this.loading = false;
 
-        this._snackBar.open("Usuário criado", "Ok", { duration: 2000 });
+        this._snackBar.open("Usuário criado com sucesso", "Ok", { duration: 2000 });
 
         this._location.back();
       })
       .catch((err) => {
         this.loading = false
 
-        this._snackBar.open("Falha ao criar usuário", "Ok", { duration: 2000 });
+        this._snackBar.open("Ocorreu um erro ao criar o usuário", "Ok", { duration: 2000 });
       });
     }
   }

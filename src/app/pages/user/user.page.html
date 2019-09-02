@@ -5,32 +5,32 @@
 <div class="user">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <mat-form-field>
-            <input matInput placeholder="Nome" type="text" name="name" formControlName="name" maxlength="50"/>
+            <input matInput placeholder="Nome" type="text" name="name" formControlName="name" maxlength="60"/>
             <mat-error *ngIf="userForm.controls.name.invalid && userForm.controls.name.touched">
-                Nome não pode ser vazio
+                O Nome deve ser preenchido
             </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field>
-            <input matInput type="email" name="email" formControlName="email" placeholder="E-mail" maxlength="40"/>
+            <input matInput type="email" name="email" formControlName="email" placeholder="E-mail" maxlength="55"/>
             <mat-error *ngIf="userForm.controls.email.invalid && userForm.controls.email.touched">
-                E-mail não pode ser vazio
+                O E-mail deve ser preenchido
             </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field>
             <input matInput type="text" name="cpf" formControlName="cpf" placeholder="CPF" maxlength="11"/>
             <mat-error *ngIf="userForm.controls.cpf.invalid && userForm.controls.cpf.touched">
-                CPF não pode ser vazio
+                O CPF deve ser preenchido
             </mat-error>
         </mat-form-field>
         <br>
         <mat-form-field>
-            <input matInput type="text" name="street" formControlName="street" placeholder="Rua" maxlength="70"/>
+            <input matInput type="text" name="street" formControlName="street" placeholder="Rua" maxlength="50"/>
         </mat-form-field>
         <br>
         <mat-form-field>
-            <input matInput type="text" name="number" formControlName="number" placeholder="Número" maxlength="7"/>
+            <input matInput type="text" name="number" formControlName="number" placeholder="Número" maxlength="5"/>
         </mat-form-field>
         <br>
         <mat-form-field>
@@ -42,8 +42,8 @@
         </mat-form-field>
         <br>
         <button mat-raised-button type="submit" [disabled]="!userForm.valid" color="primary">
-            <span *ngIf="!userId">Criar</span>
             <span *ngIf="userId">Atualizar</span>
+            <span *ngIf="!userId">Criar</span>
         </button>
     </form>
 </div>
