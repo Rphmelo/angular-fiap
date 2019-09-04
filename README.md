@@ -27,4 +27,4 @@ npm start
 
  ## Demo		
 
-Teste esse app através do seguinte link [ProjetoAngular](https://angular-fiap.web.app)
+ACESSE A APLICAÇÃO ATRAVÉS DESTE [LINK](https://angular-fiap.web.app)
